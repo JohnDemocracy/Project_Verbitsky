@@ -8,10 +8,29 @@ def check_for_duplicate_numbers():
 
     print(f"Число: {number}")
 
-    number_str = str(number)
-    if len(set(number_str)) < 4:
+    first = number // 1000
+    second = (number % 1000) // 100
+    third = (number % 100) // 10
+    fourth = number % 10
+    
+    current = first
+    if (current == second) or (current == third) or (current == fourth):
         print("В числе есть одинаковые цифры")
+        return
+    else:
+        current = second
+
+    if (current == first) or (current == third) or (current == fourth):
+        print("В числе есть одинаковые цифры")
+        return
+    else: 
+        current = third
+
+    if (current == first) or (current == second) or (current == fourth):
+        print("В числе есть одинаковые цифры")
+        return
     else:
         print("В числе нет одинаковых цифр")
+        return
 
 check_for_duplicate_numbers()
