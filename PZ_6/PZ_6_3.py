@@ -12,7 +12,7 @@ previousDistance = 9999999
 
 try:
     N = int(input("Введите кол-во точек"))
-    
+
     while N > 0:
         N -= 1
         points.append([random.randint(0, 50), random.randint(0, 50)])
@@ -27,6 +27,7 @@ try:
 
     # Работа по формуле с координатами данного члена (point) списка точек (points)
 
+    print(f"Точки: {points}")
     print(f"Вторая точка: {B}")
     print(f"Ближайшая точка: {targetPoint}")
     print(f"Расстояние: {round(distance)}")

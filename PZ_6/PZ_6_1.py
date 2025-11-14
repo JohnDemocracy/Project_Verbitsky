@@ -40,8 +40,9 @@ try:
 
     # Инвёрс списка нечётных чисел
 
-    print(even)
-    print(odd)
+    print(f"Исходный список: {list}")
+    print(f"Чётный список: {even}")
+    print(f"Нечётный список: {odd}")
 
 except ValueError:
     print("Ошибка")

@@ -47,8 +47,8 @@ try:
     # Проверка на монотонное убывание. inDescendingSection отвечает за положение на участке: при 0, мы не находимся
     # на участке убывания, а при 1 - находимся. 
 
-    print(list)
-    print(descendingSectionsCounter)
+    print(f"Исходный список: {list}")
+    print(f"Кол-во участков: {descendingSectionsCounter}")
 
 except ValueError:
     print("Ошибка")
