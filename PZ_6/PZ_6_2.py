@@ -14,8 +14,8 @@ no = "N"
 try:
     N = int(input("Введите размер списка "))
     totalN = N
-    choice = str(input("Ввести список вручную? (Y/N) "))
 
+    choice = str(input("Ввести список вручную? (Y/N) "))
     while (choice != yes) and (choice != no):
         choice = str(input("Ввести список вручную? (Y/N) "))
 
@@ -29,7 +29,7 @@ try:
             num = random.randint(0, 9999)
         list.append(num)
 
-    # Созданием списка
+    # Создание списка
 
     for i in list:
         if previousIndex == 0:

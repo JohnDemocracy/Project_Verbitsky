@@ -9,9 +9,10 @@ import random
 points = []
 B = [random.randint(0, 50), random.randint(0, 50)]
 previousDistance = 9999999
-N = int(input("Введите кол-во точек"))
 
 try:
+    N = int(input("Введите кол-во точек"))
+    
     while N > 0:
         N -= 1
         points.append([random.randint(0, 50), random.randint(0, 50)])

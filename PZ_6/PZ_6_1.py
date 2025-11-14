@@ -10,9 +10,9 @@ odd =  []
 N = 10
 yes = "Y"
 no = "N"
-choice = str(input("Ввести список вручную? (Y/N) "))
 
 try:
+    choice = str(input("Ввести список вручную? (Y/N) "))
     while (choice != yes) and (choice != no):
         choice = str(input("Ввести список вручную? (Y/N) "))
 
