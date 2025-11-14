@@ -19,6 +19,8 @@ try:
     while (choice != yes) and (choice != no):
         choice = str(input("Ввести список вручную? (Y/N) "))
 
+    # Выбор между ручным и автоматическим созданием списка
+
     while N > 0:
         N -= 1
         if choice == yes:
@@ -26,6 +28,8 @@ try:
         else:
             num = random.randint(0, 9999)
         list.append(num)
+
+    # Созданием списка
 
     for i in list:
         if previousIndex == 0:
@@ -40,8 +44,11 @@ try:
                     inDescendingSection = 0
         previousIndex = i
 
+    # Проверка на монотонное убывание. inDescendingSection отвечает за положение на участке: при 0, мы не находимся
+    # на участке убывания, а при 1 - находимся. 
+
     print(list)
     print(descendingSectionsCounter)
-    
+
 except ValueError:
     print("Ошибка")

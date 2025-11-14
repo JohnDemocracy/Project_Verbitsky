@@ -16,6 +16,8 @@ try:
     while (choice != yes) and (choice != no):
         choice = str(input("Ввести список вручную? (Y/N) "))
 
+    # Выбор между ручным и автоматическим созданием списка
+
     while N > 0:
         N -= 1
         if choice == yes:
@@ -24,13 +26,19 @@ try:
             num = random.randint(0, 9999)
         list.append(num)
         
+    # Создание списка
 
     for i in list:
         if i % 2 == 0:
             even.append(i)
         else:
-            odd.append(i)   
+            odd.append(i)
+
+    # Добавление члена списка в список чётных или нечётных чисел
+
     odd.reverse()
+
+    # Инвёрс списка нечётных чисел
 
     print(even)
     print(odd)

@@ -11,16 +11,23 @@ B = [random.randint(0, 50), random.randint(0, 50)]
 previousDistance = 9999999
 N = int(input("Введите кол-во точек"))
 
-while N > 0:
-    N -= 1
-    points.append([random.randint(0, 50), random.randint(0, 50)])
+try:
+    while N > 0:
+        N -= 1
+        points.append([random.randint(0, 50), random.randint(0, 50)])
 
-for point in points:
-    distance = math.sqrt((B[0] - point[0]) ** 2 + (B[1] - point[1]) ** 2)
-    if distance < previousDistance:
-        previousDistance = distance
-        targetPoint = point
+    # Создание списка точек с их координатами
 
-print(f"Вторая точка: {B}")
-print(f"Ближайшая точка: {targetPoint}")
-print(f"Расстояние: {round(distance)}")
+    for point in points:
+        distance = math.sqrt((B[0] - point[0]) ** 2 + (B[1] - point[1]) ** 2)
+        if distance < previousDistance:
+            previousDistance = distance
+            targetPoint = point
+
+    # Работа по формуле с координатами данного члена (point) списка точек (points)
+
+    print(f"Вторая точка: {B}")
+    print(f"Ближайшая точка: {targetPoint}")
+    print(f"Расстояние: {round(distance)}")
+except ValueError:
+    print("Ошибка")
