@@ -7,7 +7,7 @@ import random
 location = ["C:"]
 N = random.randint(2, 7)
 FileName = str(input("Введите название файла "))
-Extension = str(input("Введите расширение файла "))
+Extension = str(input("Введите расширение файла ")).replace(".", "")
 FullFileName = FileName + "." + Extension
 
 i = 1
@@ -22,4 +22,5 @@ while N != 0:
 FullLocation = "/".join(location)
 FindFileName = ((((FullLocation.split("/"))[-1]).split("."))[0])
 
+print(FullLocation)
 print(FindFileName)
