@@ -31,5 +31,6 @@ try:
     print(f"Вторая точка: {B}")
     print(f"Ближайшая точка: {targetPoint}")
     print(f"Расстояние: {round(distance)}")
+    
 except ValueError:
     print("Ошибка")
