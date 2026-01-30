@@ -8,22 +8,46 @@ magnit = {"молоко", "соль", "сахар"}
 pyatyorochka = {"мясо", "молоко", "сыр"}
 perekrestok = {"молоко", "творог", "сыр", "сахар"}
 
-stores = {
-    "Магнит": magnit,
-    "Пятёрочка": pyatyorochka,
-    "Перекрёсток": perekrestok
-}
+listselect = input("Использовать вариант со списками и кортежами? (Y/N) ")
+
+while listselect.lower() != 'y' and listselect.lower() != 'n':
+   listselect = input("Использовать вариант со списками? (Y/N) ") 
+
+storeshaveitems1 = set()
+storeshaveitems2 = set()
+
+# Без списков и кортежей:
+
+neededitems1 = {"молоко", "сыр"}
+neededitems2 = {"сахар"}
+
+if listselect.lower() == 'n':
+
+    if neededitems1.issubset(magnit):
+        storeshaveitems1.add("Магнит")
+    if neededitems1.issubset(pyatyorochka):
+        storeshaveitems1.add("Пятёрочка")
+    if neededitems1.issubset(perekrestok):
+        storeshaveitems1.add("Перекрёсток")
+
+    if neededitems2.issubset(magnit):
+        storeshaveitems2.add("Магнит")
+    if neededitems2.issubset(pyatyorochka):
+        storeshaveitems2.add("Пятёрочка")
+    if neededitems2.issubset(perekrestok):
+        storeshaveitems2.add("Перекрёсток")
+
+# Со списками и кортежами:
+
+else:
+    storelist = [("Магнит", magnit), ("Пятёрочка", pyatyorochka), ("Перекрёсток", perekrestok)]
+    for store, products in storelist:
+        if 'молоко' in products and 'сыр' in products:
+            storeshaveitems1.add(store)
+        if 'сахар' in products:
+            storeshaveitems2.add(store)
+
 
 print(f'Полный список всех товаров: {magnit | pyatyorochka | perekrestok}')
-
-storelist1 = []
-storelist2 = []
-for store, products in stores.items():
-    if "молоко" in products and "сыр" in products:
-        storelist1.append(store)
-    if "сахар" in products:
-        storelist2.append(store)
-
-print(f'Где можно купить сыр и молоко: {", ".join(storelist1)}')
-print(f'Где можно купить сахар: {", ".join(storelist2)}')
-
+print(f'Где можно купить сыр и молоко: {storeshaveitems1}')
+print(f'Где можно купить сахар: {storeshaveitems2}')
