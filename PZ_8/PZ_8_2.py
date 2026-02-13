@@ -14,8 +14,8 @@ def minmaxtemp(dictionary):
     print(f"Минимальная температура: {mintemp}")
     print(f"Средняя температура: {avgtemp}")
 
-for idx, val in enumerate(string.split()):
-    temps[dictkeys[idx]] = val
+for i, val in enumerate(string.split()):
+    temps[dictkeys[i]] = val
 
 print(f"Словарь: {temps}")
 
