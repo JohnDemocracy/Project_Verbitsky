@@ -10,15 +10,12 @@ def makelist():
     return list1, list2
 
 def findsimiliar(a, b):
-    set1 = set(a)
-    set2 = set(b)
-    set3 = set1 & set2
+    set3 = {x for x in a if x in b}
     print(f"Общие элементы: {set3}")
     return(set3)
 
 def findsimiliarcount(c):
-    list3 = list(c)
-    lenlist3 = len(list3)
+    lenlist3 = len(list(c))
     print(f"Количество общих элементов: {lenlist3}")
     return(lenlist3)
 
