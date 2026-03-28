@@ -29,6 +29,6 @@ textfile2.close
 
 textfile2 = open(r'C:\RKSI\OAP\Project_Verbitsky\PZ_10\text18-9-2.txt', 'r', encoding='utf-8')
 
-print(f"\nСодержимое файла:\n\n{text}\n")
+print(f"Содержимое файла:\n\n{text}\n")
 print(f"Количество букв в нижнем регистре: {lowercount}\n")
 print(f"Новый файл:\n\n{textfile2.read()}")
