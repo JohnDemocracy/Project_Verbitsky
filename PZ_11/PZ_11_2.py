@@ -7,7 +7,6 @@ import string
 given = 'In PyCharm, you can specify third-party standalone applications and run them as External Tools'
 
 def showlowercase(givenstr):
-    output = "".join([c for c in givenstr if c in string.ascii_lowercase])
-    return(output)
+    return ("".join([c for c in givenstr if c in string.ascii_lowercase]))
 
 print(showlowercase(given))

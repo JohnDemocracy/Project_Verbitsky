@@ -7,7 +7,7 @@ def makelist():
     list1 = [random.randint(1, 100) for i in range(20)]
     list2 = [random.randint(1, 100) for i in range(20)]
     print(f"Последовательность 1: {list1}\nПоследовательность 2: {list2}")
-    return list1, list2
+    return(list1, list2)
 
 def findsimiliar(a, b):
     set3 = {x for x in a if x in b}
@@ -15,9 +15,8 @@ def findsimiliar(a, b):
     return(set3)
 
 def findsimiliarcount(c):
-    lenlist3 = len(list(c))
-    print(f"Количество общих элементов: {lenlist3}")
-    return(lenlist3)
+    print(f"Количество общих элементов: {len(list(c))}")
+    return(len(list(c)))
 
 returned_list1, returned_list2 = makelist()
 returned_set = findsimiliar(returned_list1, returned_list2)
