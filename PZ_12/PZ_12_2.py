@@ -16,7 +16,7 @@ def findelement(a):
     if filtered:
         print(f"Элементы, кратные 3: {filtered}")
         avg = sum(filtered) / len(filtered)
-        print(f"Среднее арифметическое: {avg:.2f}")
+        print(f"Среднее арифметическое: {avg}")
     else:
         print(f"Нет положительных элементов, кратных 3")
 
