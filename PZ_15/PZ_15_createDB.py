@@ -89,7 +89,7 @@ with sqlite3.connect(database) as conn:
         initialize_database()
         while True:
             print("\n1. Все записи\n2. Поиск\n3. Редактировать\n4. Удалить\n0. Выход")
-            choice = input("Действие: ")
+            choice = input()
             if choice == '1': 
                 view_all()
             elif choice == '2': 
