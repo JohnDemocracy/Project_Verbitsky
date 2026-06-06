@@ -4,40 +4,40 @@
 # уникальные методы и свойства, такие как "управлять командой" и "проектировать
 # системы".
 
-class Работник:
-    def __init__(self, имя, зарплата):
-        self.имя = имя
-        self.зарплата = зарплата
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
 
-    def работать(self):
-        return f"{self.имя} выполняет свои обязанности."
+    def work(self):
+        return f"{self.name} выполняет свои обязанности."
 
-    def получать_зарплату(self):
-        return f"{self.имя} получил зарплату: {self.зарплата} руб."
+    def receive_salary(self):
+        return f"{self.name} получил зарплату: {self.salary} руб."
 
-class Менеджер(Работник):
-    def __init__(self, имя, зарплата, размер_команды):
-        super().__init__(имя, зарплата)
-        self.размер_команды = размер_команды
+class Manager(Employee):
+    def __init__(self, name, salary, team_size):
+        super().__init__(name, salary)
+        self.team_size = team_size
 
-    def управлять_командой(self):
-        return f"{self.имя} эффективно управляет командой из {self.размер_команды} человек."
+    def manage_team(self):
+        return f"{self.name} эффективно управляет командой из {self.team_size} человек."
 
-class Инженер(Работник):
-    def __init__(self, имя, зарплата, проект):
-        super().__init__(имя, зарплата)
-        self.проект = проект
+class Engineer(Employee):
+    def __init__(self, name, salary, project):
+        super().__init__(name, salary)
+        self.project = project
 
-    def проектировать_системы(self):
-        return f"{self.имя} проектирует новую систему для проекта: {self.проект}."
+    def project_systems(self):
+        return f"{self.name} проектирует новую систему для проекта: {self.project}."
 
-manager = Менеджер("Анна", 120000, 15)
-engineer = Инженер("Иван", 150000, "Облачная инфраструктура")
+manager = Manager("Анна", 120000, 15)
+engineer = Engineer("Иван", 150000, "Облачная инфраструктура")
 
-print(manager.работать())
-print(manager.получать_зарплату())
-print(manager.управлять_командой())
+print(manager.work())
+print(manager.receive_salary())
+print(manager.manage_team())
 
-print(engineer.работать())
-print(engineer.получать_зарплату())
-print(engineer.проектировать_системы())
+print(engineer.work())
+print(engineer.receive_salary())
+print(engineer.project_systems())
