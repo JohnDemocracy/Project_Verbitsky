@@ -7,27 +7,24 @@ database = 'plan.db'
 with sqlite3.connect(database) as conn:
     cursor = conn.cursor()
     def initialize_database():
-        try:
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Disciplines (
-                    discipline_code TEXT PRIMARY KEY,
-                    name TEXT NOT NULL,
-                    specialty TEXT NOT NULL,
-                    lectures INTEGER NOT NULL,
-                    practices INTEGER NOT NULL,
-                    labs INTEGER NOT NULL,
-                    assessment TEXT NOT NULL
-                )
-            """)
-        except sqlite3.Error:
-            pass
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Disciplines (
+                discipline_code TEXT PRIMARY KEY,
+                name TEXT NOT NULL,
+                specialty TEXT NOT NULL,
+                lectures INTEGER NOT NULL,
+                practices INTEGER NOT NULL,
+                labs INTEGER NOT NULL,
+                assessment TEXT NOT NULL
+            )
+        """)
         insert_data()
     
     def print_records(records):
         if not records:
             return
         for row in records:
-            print(f"{row[0]:<5} | {row[1]:<30} | {row[2]:<8} | {row[3]:<7} | {row[4]:<9} | {row[5]:<5} | {row[6]}")
+            print(f"{row[0]} | {row[1]} | {row[2]} | {row[3]} | {row[4]} | {row[5]} | {row[6]}")
 
     def search_records():
         print("1. Поиск по специальности\n2. Поиск по форме зачёта\n3. Поиск по лекциям (> чем)")
